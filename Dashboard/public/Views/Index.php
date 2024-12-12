@@ -2,6 +2,10 @@
 
 require_once __DIR__ . '/../Model/Model.php';
 require_once __DIR__ . '/../Model/User.php';
+require_once __DIR__ . '/../Model/Category.php';
+require_once __DIR__ . '/../Model/Post.php';
+require_once __DIR__ . '/../Model/Tags.php';
+
 
 // if(!isset($_SESSION['full_name'])){
 //   header('Location ; ./login.php');
@@ -10,6 +14,22 @@ require_once __DIR__ . '/../Model/User.php';
 if (!isset($_SESSION['full_name'])) {
   header("Location: ./login.php");
 }
+
+$total_post = new Post();
+$total_post = $total_post->total_post();
+
+$total_cat = new Category();
+$total_cat = $total_cat->total_cat();
+
+$total_tag = new Tags();
+$total_tag = $total_tag->total_tags();
+
+$total_user = new Users();
+$total_user = $total_user->total_user();
+// var_dump($total_post);
+// die;
+
+
 
 
 ?>
@@ -83,12 +103,12 @@ if (!isset($_SESSION['full_name'])) {
               </div>
               <div>
                 <p
-                  class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                  Total clients
-                </p>
-                <p
-                  class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  6389
+                class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+                Total Users
+              </p>
+              <p
+              class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+              <?= $total_user[0]['total_user']?>
                 </p>
               </div>
             </div>
@@ -107,11 +127,11 @@ if (!isset($_SESSION['full_name'])) {
               <div>
                 <p
                   class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                  Account balance
+                  Total Category
                 </p>
                 <p
-                  class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  $ 46,760.89
+                class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                  <?= $total_cat[0]['total_cat'] ?>
                 </p>
               </div>
             </div>
@@ -128,11 +148,11 @@ if (!isset($_SESSION['full_name'])) {
               <div>
                 <p
                   class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                  New sales
+                 Total Tags
                 </p>
                 <p
                   class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  376
+                  <?= $total_tag[0]['total_tag']?>
                 </p>
               </div>
             </div>
@@ -151,11 +171,12 @@ if (!isset($_SESSION['full_name'])) {
               <div>
                 <p
                   class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                  Pending contacts
+                  Total Postingan
                 </p>
                 <p
                   class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  35
+                  <?= $total_post[0]['total_posts'] ?>
+
                 </p>
               </div>
             </div>

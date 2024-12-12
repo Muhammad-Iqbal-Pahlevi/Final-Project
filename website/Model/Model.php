@@ -47,4 +47,6 @@ class Blogs_new extends Model
         $result = mysqli_query($this->db, $query);
         return $this->convert_data($result);
     }
+
+    
 }

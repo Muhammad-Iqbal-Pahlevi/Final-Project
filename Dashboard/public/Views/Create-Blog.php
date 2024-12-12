@@ -60,7 +60,7 @@ if (isset($_POST["submit"])) {
         :class="{ 'overflow-hidden': isSideMenuOpen}">
         <?php include '../Layout/Sidebar.php'; ?>
         <div class="flex flex-col flex-1">
-           <?php include '../Layout/Header.php'; ?>
+           <?php include '/../Layout/Header.php'; ?>
             <main class="h-full pb-16 overflow-y-auto">
                 <div class="container px-6 mx-auto grid">
                     <h2
@@ -97,7 +97,7 @@ if (isset($_POST["submit"])) {
                         </label>
 
                         <label class="block mt-4 text-sm" for="content">
-                            <span class="text-gray-700 dark:text-gray-400 mb-2">Message</span>
+                            <span class="text-gray-700 dark:text-gray-400 mb-2">Content</span>
                             <textarea
                                 class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
                                 rows="3" name="content" id="content"
@@ -105,7 +105,7 @@ if (isset($_POST["submit"])) {
                         </label>
                         <label class="block text-sm" for="category">
                             <span class="text-gray-700 dark:text-gray-400 mb-2">
-                                Requested Limit
+                                Chose Category
                             </span>
                             <select name="category" id="category"
                                 class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -116,7 +116,7 @@ if (isset($_POST["submit"])) {
                         </label>
                         <label class="block text-sm" for="user">
                             <span class="text-gray-700 dark:text-gray-400 mb-2">
-                                Requested Limit
+                                Chose Author
                             </span>
                             <select name="user" id="user"
                                 class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -128,7 +128,7 @@ if (isset($_POST["submit"])) {
                         <!-- Select -->
                         <label for="tag_id_pivot" class="block text-sm">
                             <span class="text-gray-700 dark:text-gray-400 mb-2">
-                                Requested Limit
+                                Chose Tags
                             </span>
                             <select multiple="multiple" name="tag_id_pivot[]" id="tag_id_pivot" data-hs-select='{
                                 "placeholder": "Select multiple options...",

@@ -60,4 +60,11 @@ class Category extends Model
    {
       return parent::paginate_data($this->table, $start, $limit);
    }
+
+   public function total_cat(){
+      // mengambil jumlah postingan
+      $query = "SELECT COUNT(categories.id_category) AS total_cat FROM categories";
+      $result = mysqli_query($this->db, $query);
+      return $this->convert_data($result);
+  }
 }

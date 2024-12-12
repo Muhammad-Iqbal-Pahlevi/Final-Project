@@ -164,5 +164,10 @@ DESC LIMIT $limit";
       return 'Logout success';
    }
 
-   
+   public function total_user(){
+      // mengambil jumlah postingan
+      $query = "SELECT COUNT(users.id_user) AS total_user FROM users";
+      $result = mysqli_query($this->db, $query);
+      return $this->convert_data($result);
+  }
 }

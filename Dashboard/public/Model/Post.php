@@ -162,4 +162,11 @@ class Post extends Model
       $result = mysqli_query($this->db, $query);
       return $this->convert_data($result);
    }
+
+   public function total_post(){
+      // mengambil jumlah postingan
+      $query = "SELECT COUNT(posts.id_post) AS total_posts FROM posts";
+      $result = mysqli_query($this->db, $query);
+      return $this->convert_data($result);
+  }
 }

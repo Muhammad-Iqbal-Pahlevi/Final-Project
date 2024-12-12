@@ -36,11 +36,18 @@ class Tags extends Model{
       if(isset($start) && isset($limit)){
          $queryLimit = " LIMIT $start, $limit";
       }
-      $keyword = " WHERE name_category LIKE '%{$keyword}%' $queryLimit";
+      $keyword = " WHERE name_tag LIKE '%{$keyword}%' $queryLimit";
       return parent::search_data($keyword, $this->table);
     }
 
        public function paginate($start, $limit){
         return parent::paginate_data($this->table, $start, $limit);
-       }    
+       }  
+       
+       public function total_tags(){
+         // mengambil jumlah postingan
+         $query = "SELECT COUNT(tags.id_tag) AS total_tag FROM tags";
+         $result = mysqli_query($this->db, $query);
+         return $this->convert_data($result);
+     }
 }
