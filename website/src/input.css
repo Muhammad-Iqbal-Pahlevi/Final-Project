@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .author {
+        @apply card min-h-24 flex flex-row relative;
+    }
+    .detail_auhtor {
+        @apply detail p-4 absolute right-2 space-y- bg-white space-y-1 w-2/3 top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-1/2 rounded-md shadow;
+    }
+}

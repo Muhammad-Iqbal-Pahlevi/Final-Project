@@ -1,0 +1,26 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+.slider {
+    width: 100%;   /* Membuat slider mengambil lebar penuh */
+    margin: 0 auto; /* Untuk memastikan container terpusat */
+    padding: 10px 0px;
+}
+
+.slick-slide {
+    margin: 0 10px; /* Jarak horizontal antar slide */
+}
+
+
+@media (max-width: 768px) {
+    /* Pastikan pada mobile, lebar slider 100% */
+    .slider {
+        width: 100%; 
+    }
+    /* Pada perangkat mobile, hapus margin antar slide */
+    .slick-slide {
+        margin: 0 10px; /* Menghilangkan margin antar slide pada mobile */
+    }
+}
+
+
